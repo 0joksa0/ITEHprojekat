@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="header-admin">
+    <h1>Users</h1>
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+    <% if (error) { %>
+     <%- include('partials/error.ejs', {error}) %>
+    <% } %>
+
+    <% users.forEach(user => { %>
+        <%- include('partials/userComponent.ejs', {user}) %>
+    <% }) %>
+</body>
+<style>
+    body {
+        background-color: #264348;
+    }
+    h1 {
+        color: white;
+        text-align: center;
+        font-family:'Poppins', sans-serif;;
+    }
+
+    .header-admin {
+    margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-admin button {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #203538;
+        border: 2px solid white;
+        color: white;
+        border: none;
+    }
+    .header-admin button:hover {
+        background-color: #264348;
+        border: 2px solid white;
+    }
+    .userComponent {
+        background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5); 
+    padding: 20px;
+    margin: 20px;
+    }
+    .userComponent:hover {
+        background-color: #203538;
+    }
+    
+    .userComponent input {
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .userComponent label {
+        font-family:'Poppins', sans-serif;;
+        color: white;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .userComponent input:hover {
+        background-color: lightgray;
+    }
+    .userComponent button {
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .userComponent button:hover {
+        background-color: lightgray;
+    }
+    .userComponent button:active {
+        background-color: gray;
+    }
+</style>
+<script>
+var btns = document.querySelectorAll('.btnUpdate');
+    btns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            var form = e.target.parentElement;
+            form.action = "/updateUser";
+            form.submit();
+        })
+    })
+    var btns = document.querySelectorAll('.btnDelete');
+    btns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            var form = e.target.parentElement;
+            form.action = "/deleteUser";
+            form.submit();
+        })
+    })
+    </script>
+</html>

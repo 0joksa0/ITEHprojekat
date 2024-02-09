@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="shortcut icon" href="./imgs/favicon.ico">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+<body>
+    <section class="showcase">
+    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/background.ejs') %>
+
+    <div class="wrapper">
+        <span class="icon-close">
+          <ion-icon name="close-outline"></ion-icon>
+        </span>
+        <div class="form-box login">
+          <% if(typeof formType != "undefined") { %>
+            <h2> <%= formType %> </h2>
+          <% } %>
+          <h2> Login</h2>
+          <form action="<%= postRoute %>" method="post" >
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </span>
+              <input type="text" name="username" id="username"required />
+              <label>Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+              </span>
+              <input type="password" name="password" id="password" required />
+              <label>Password</label>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="login-register">
+                <% if (failed == 1) { %>
+                  <p style= "color: red; text-align: center;">Invalid username or password</p>
+                 <% } %>
+                 <% if (failed == 2) { %>
+                     <h3 style= "color: lawngreen; text-align: center;">LOGGED IN</h3>
+                 <% } %>
+                 <% if (loggedIn == true) { %>
+                  <p style= "color: red; text-align: center;">You can be logged in from one browser at the time</p>
+                 <% } %>
+              <p>
+                Don't have an account?<a href="/SignUp" class="register-link"
+                  >Register</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- granica -->
+    
+      </div>
+    </section>
+</body>
+</html>

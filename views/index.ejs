@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link rel="shortcut icon" href="./imgs/favicon.ico">
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleLogin.css">
+  </head>
+
+  <body>
+    <section class="showcase">
+    <% if (username == null ) { %>
+      <%- include('./partials/nav.ejs') %>
+    <% } else { %>
+      <%- include('./partials/navLog.ejs') %>
+    <% } %>
+    <%- include('./partials/background.ejs')%>
+
+      <div class="text">
+        <h2>Welcome to Chess Game!</h2>
+        <p>
+          Experience the excitement of multiplayer chess battles from your
+          browser. Challenge friends, compete globally, and showcase your
+          skills.
+        </p>
+        <div>
+          <h3>Features:</h3>
+          <ul>
+            <li>Real-time multiplayer matches.</li>
+            <li>Various game modes and time controls.</li>
+            <li>Track your progress with statistics and leaderboards.</li>
+            <li>Master advanced moves and tactics.</li>
+            <li>Face a challenging chess engine (coming soon).</li>
+          </ul>
+        </div>
+        <p>Join today and make your move towards victory!</p>
+        <% if (username != null) { %>
+          <a href="/gameMenu">Play</a>
+        <% } else { %>
+          <a href="/logIn">Log In</a>
+        <% } %>
+      </div>
+
+     
+    </section>
+    </div>
+  </body>
+</html>

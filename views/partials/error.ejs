@@ -1,0 +1,42 @@
+<div class="error-popup">
+  <h2>Error</h2>
+  <p><%= error %></p>
+    <button class="close-btn">Close</button>
+  
+</div>
+<style>
+    .error-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .error-popup h2 {
+        margin-bottom: 10px;
+    }
+    
+    .error-popup .close-btn {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+<script>
+    const closeBtn = document.querySelector('.close-btn');
+    closeBtn.addEventListener('click', () => {
+        document.querySelector('.error-popup').style.display = 'none';
+    });
+</script>
+

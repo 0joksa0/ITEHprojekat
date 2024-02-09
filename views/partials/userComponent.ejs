@@ -1,0 +1,21 @@
+<div class="userComponent">
+    <form action="" method="post">
+            <!-- add labels for each one -->
+            <input type="text" name="id" value="<%= user._id %>" hidden>
+            <label for="name">Name</label>
+            <input type="text" name="name" value="<%= user.name %>">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" value="<%= user.lastname %>">
+            <label for="username">Username</label>
+            <input type="text" name="username" value="<%= user.username %>">
+            <label for="password">Password</label>
+            <input type="text" name="password" value="<%= user.password %>">
+            
+            <button type="submit" class="btnUpdate" value="update">Update</button>
+            <button type="submit" class="btnDelete" value="delete">Delete</button>
+        </form>
+    </div>
+        
+    </form>
+</div>
+

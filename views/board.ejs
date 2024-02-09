@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/cm-chessboard/assets/chessboard.css" />
+  <link rel="stylesheet" href="/cm-chessboard/assets/extensions/markers/markers.css" />
+  <link rel="stylesheet" href="/cm-chessboard/assets/extensions/promotion-dialog/promotion-dialog.css" />
+  <link rel="stylesheet" href="/board.css">
+  <title>GAME</title>
+  <link rel="shortcut icon" href="./imgs/favicon.ico">
+</head>
+
+<body>
+    <div class="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="container">
+    <div class="player">ME</div>
+    <div id="boardChess"></div>
+    <div class="opponent">OP</div>
+  </div>
+  <div class="endPopUp">
+    <div class="endPopUp_content">
+      <h2>Game ended</h2>
+      <h2 id = "endPopUp_result"></h2>
+      <div class="endPopUp_button">
+        <a href="/board">New Game</a>
+        <a href="/gameMenu">Exit</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/scripts/client.js" type="module"></script>
+</html>
